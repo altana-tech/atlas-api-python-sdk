@@ -411,7 +411,7 @@ class ApiClient(object):
                         delimiter = ' '
                     elif collection_format == 'tsv':
                         delimiter = '\t'
-                    elif collection_format == 'pipes':
+                    elif collection_format == 'pipe':
                         delimiter = '|'
                     else:  # csv is the default
                         delimiter = ','
