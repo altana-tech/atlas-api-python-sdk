@@ -139,7 +139,7 @@ class ProductApi(object):
         :param async_req bool
         :param str product_id: An Altana Canonical Identifier (required)
         :param str trade_direction: Filter companies based on the direction of the trade
-        :param int page: Page number to return from results
+        :param int page: Page number to return from results (0-99)
         :return: Companies
                  If the method is called asynchronously,
                  returns the request thread.
@@ -163,7 +163,7 @@ class ProductApi(object):
         :param async_req bool
         :param str product_id: An Altana Canonical Identifier (required)
         :param str trade_direction: Filter companies based on the direction of the trade
-        :param int page: Page number to return from results
+        :param int page: Page number to return from results (0-99)
         :return: Companies
                  If the method is called asynchronously,
                  returns the request thread.
@@ -242,7 +242,7 @@ class ProductApi(object):
         :param async_req bool
         :param str product_id: An Altana Canonical Identifier (required)
         :param str trade_direction: Filter facilities based on the direction of the trade
-        :param int page: Page number to return from results
+        :param int page: Page number to return from results (0-99)
         :return: Facilities
                  If the method is called asynchronously,
                  returns the request thread.
@@ -266,7 +266,7 @@ class ProductApi(object):
         :param async_req bool
         :param str product_id: An Altana Canonical Identifier (required)
         :param str trade_direction: Filter facilities based on the direction of the trade
-        :param int page: Page number to return from results
+        :param int page: Page number to return from results (0-99)
         :return: Facilities
                  If the method is called asynchronously,
                  returns the request thread.

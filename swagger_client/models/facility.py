@@ -43,7 +43,13 @@ class Facility(object):
         'number_records': 'int',
         'data_sources': 'list[str]',
         'products_sent': 'list[str]',
-        'products_received': 'list[str]'
+        'products_received': 'list[str]',
+        'company_model_metadata': 'list[ModelMetaData]',
+        'geo_string_address_model_metadata': 'list[ModelMetaData]',
+        'string_address_model_metadata': 'list[ModelMetaData]',
+        'geocoder_metadata': 'list[GeoCoderMetaData]',
+        'address_model_output_level': 'str',
+        'address_cosine_similarity': 'str'
     }
 
     attribute_map = {
@@ -62,10 +68,16 @@ class Facility(object):
         'number_records': 'number_records',
         'data_sources': 'data_sources',
         'products_sent': 'products_sent',
-        'products_received': 'products_received'
+        'products_received': 'products_received',
+        'company_model_metadata': 'company_model_metadata',
+        'geo_string_address_model_metadata': 'geo_string_address_model_metadata',
+        'string_address_model_metadata': 'string_address_model_metadata',
+        'geocoder_metadata': 'geocoder_metadata',
+        'address_model_output_level': 'address_model_output_level',
+        'address_cosine_similarity': 'address_cosine_similarity'
     }
 
-    def __init__(self, facility_canon_id=None, company_canon_id=None, company_name=None, hs_received=None, hs_sent=None, hs_traded=None, receives_from_facility_ids=None, sends_to_facility_ids=None, address=None, coordinates=None, restrictions=None, industries=None, number_records=None, data_sources=None, products_sent=None, products_received=None):  # noqa: E501
+    def __init__(self, facility_canon_id=None, company_canon_id=None, company_name=None, hs_received=None, hs_sent=None, hs_traded=None, receives_from_facility_ids=None, sends_to_facility_ids=None, address=None, coordinates=None, restrictions=None, industries=None, number_records=None, data_sources=None, products_sent=None, products_received=None, company_model_metadata=None, geo_string_address_model_metadata=None, string_address_model_metadata=None, geocoder_metadata=None, address_model_output_level=None, address_cosine_similarity=None):  # noqa: E501
         """Facility - a model defined in Swagger"""  # noqa: E501
         self._facility_canon_id = None
         self._company_canon_id = None
@@ -83,6 +95,12 @@ class Facility(object):
         self._data_sources = None
         self._products_sent = None
         self._products_received = None
+        self._company_model_metadata = None
+        self._geo_string_address_model_metadata = None
+        self._string_address_model_metadata = None
+        self._geocoder_metadata = None
+        self._address_model_output_level = None
+        self._address_cosine_similarity = None
         self.discriminator = None
         if facility_canon_id is not None:
             self.facility_canon_id = facility_canon_id
@@ -116,6 +134,18 @@ class Facility(object):
             self.products_sent = products_sent
         if products_received is not None:
             self.products_received = products_received
+        if company_model_metadata is not None:
+            self.company_model_metadata = company_model_metadata
+        if geo_string_address_model_metadata is not None:
+            self.geo_string_address_model_metadata = geo_string_address_model_metadata
+        if string_address_model_metadata is not None:
+            self.string_address_model_metadata = string_address_model_metadata
+        if geocoder_metadata is not None:
+            self.geocoder_metadata = geocoder_metadata
+        if address_model_output_level is not None:
+            self.address_model_output_level = address_model_output_level
+        if address_cosine_similarity is not None:
+            self.address_cosine_similarity = address_cosine_similarity
 
     @property
     def facility_canon_id(self):
@@ -478,6 +508,132 @@ class Facility(object):
         """
 
         self._products_received = products_received
+
+    @property
+    def company_model_metadata(self):
+        """Gets the company_model_metadata of this Facility.  # noqa: E501
+
+
+        :return: The company_model_metadata of this Facility.  # noqa: E501
+        :rtype: list[ModelMetaData]
+        """
+        return self._company_model_metadata
+
+    @company_model_metadata.setter
+    def company_model_metadata(self, company_model_metadata):
+        """Sets the company_model_metadata of this Facility.
+
+
+        :param company_model_metadata: The company_model_metadata of this Facility.  # noqa: E501
+        :type: list[ModelMetaData]
+        """
+
+        self._company_model_metadata = company_model_metadata
+
+    @property
+    def geo_string_address_model_metadata(self):
+        """Gets the geo_string_address_model_metadata of this Facility.  # noqa: E501
+
+
+        :return: The geo_string_address_model_metadata of this Facility.  # noqa: E501
+        :rtype: list[ModelMetaData]
+        """
+        return self._geo_string_address_model_metadata
+
+    @geo_string_address_model_metadata.setter
+    def geo_string_address_model_metadata(self, geo_string_address_model_metadata):
+        """Sets the geo_string_address_model_metadata of this Facility.
+
+
+        :param geo_string_address_model_metadata: The geo_string_address_model_metadata of this Facility.  # noqa: E501
+        :type: list[ModelMetaData]
+        """
+
+        self._geo_string_address_model_metadata = geo_string_address_model_metadata
+
+    @property
+    def string_address_model_metadata(self):
+        """Gets the string_address_model_metadata of this Facility.  # noqa: E501
+
+
+        :return: The string_address_model_metadata of this Facility.  # noqa: E501
+        :rtype: list[ModelMetaData]
+        """
+        return self._string_address_model_metadata
+
+    @string_address_model_metadata.setter
+    def string_address_model_metadata(self, string_address_model_metadata):
+        """Sets the string_address_model_metadata of this Facility.
+
+
+        :param string_address_model_metadata: The string_address_model_metadata of this Facility.  # noqa: E501
+        :type: list[ModelMetaData]
+        """
+
+        self._string_address_model_metadata = string_address_model_metadata
+
+    @property
+    def geocoder_metadata(self):
+        """Gets the geocoder_metadata of this Facility.  # noqa: E501
+
+
+        :return: The geocoder_metadata of this Facility.  # noqa: E501
+        :rtype: list[GeoCoderMetaData]
+        """
+        return self._geocoder_metadata
+
+    @geocoder_metadata.setter
+    def geocoder_metadata(self, geocoder_metadata):
+        """Sets the geocoder_metadata of this Facility.
+
+
+        :param geocoder_metadata: The geocoder_metadata of this Facility.  # noqa: E501
+        :type: list[GeoCoderMetaData]
+        """
+
+        self._geocoder_metadata = geocoder_metadata
+
+    @property
+    def address_model_output_level(self):
+        """Gets the address_model_output_level of this Facility.  # noqa: E501
+
+
+        :return: The address_model_output_level of this Facility.  # noqa: E501
+        :rtype: str
+        """
+        return self._address_model_output_level
+
+    @address_model_output_level.setter
+    def address_model_output_level(self, address_model_output_level):
+        """Sets the address_model_output_level of this Facility.
+
+
+        :param address_model_output_level: The address_model_output_level of this Facility.  # noqa: E501
+        :type: str
+        """
+
+        self._address_model_output_level = address_model_output_level
+
+    @property
+    def address_cosine_similarity(self):
+        """Gets the address_cosine_similarity of this Facility.  # noqa: E501
+
+
+        :return: The address_cosine_similarity of this Facility.  # noqa: E501
+        :rtype: str
+        """
+        return self._address_cosine_similarity
+
+    @address_cosine_similarity.setter
+    def address_cosine_similarity(self, address_cosine_similarity):
+        """Sets the address_cosine_similarity of this Facility.
+
+
+        :param address_cosine_similarity: The address_cosine_similarity of this Facility.  # noqa: E501
+        :type: str
+        """
+
+        self._address_cosine_similarity = address_cosine_similarity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

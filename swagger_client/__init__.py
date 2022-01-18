@@ -35,9 +35,11 @@ from swagger_client.models.edges import Edges
 from swagger_client.models.facilities import Facilities
 from swagger_client.models.facility import Facility
 from swagger_client.models.facility_trading_partners import FacilityTradingPartners
+from swagger_client.models.geo_coder_meta_data import GeoCoderMetaData
 from swagger_client.models.goods_measure import GoodsMeasure
 from swagger_client.models.hs_misclassification_risk import HSMisclassificationRisk
 from swagger_client.models.inter_facility_edge import InterFacilityEdge
+from swagger_client.models.model_meta_data import ModelMetaData
 from swagger_client.models.one_of_edge import OneOfEdge
 from swagger_client.models.one_of_risk import OneOfRisk
 from swagger_client.models.party import Party

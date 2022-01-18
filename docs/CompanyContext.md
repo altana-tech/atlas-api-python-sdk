@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **buyers** | **list[str]** | A list of Altana Canonical Company Identifiers, representing companies this company sells to | 
 **countries_of_origin** | **list[str]** | A list of ISO-2 country codes | 
 **countries_of_destination** | **list[str]** | A list of ISO-2 country codes | 
-**countries_of_operation** | **list[str]** | An ordered list of ISO-2 country codes, ranked in descending order of number of transaction by the countries in which a company does business (exports from or imports to) | [optional] 
+**countries_of_operation** | **list[str]** | A list of ISO-2 country codes in which a company owns facilities | [optional] 
 **hs_traded** | **list[str]** | A list of HS code section prefixes | 
 **industries** | **list[str]** | A list of industries defined by Altana taxonomy | 
 **products_sent** | **list[str]** | A list of product IDs that a company sends | [optional] 

@@ -238,7 +238,7 @@ class CompanyContext(object):
     def countries_of_operation(self):
         """Gets the countries_of_operation of this CompanyContext.  # noqa: E501
 
-        An ordered list of ISO-2 country codes, ranked in descending order of number of transaction by the countries in which a company does business (exports from or imports to)  # noqa: E501
+        A list of ISO-2 country codes in which a company owns facilities  # noqa: E501
 
         :return: The countries_of_operation of this CompanyContext.  # noqa: E501
         :rtype: list[str]
@@ -249,7 +249,7 @@ class CompanyContext(object):
     def countries_of_operation(self, countries_of_operation):
         """Sets the countries_of_operation of this CompanyContext.
 
-        An ordered list of ISO-2 country codes, ranked in descending order of number of transaction by the countries in which a company does business (exports from or imports to)  # noqa: E501
+        A list of ISO-2 country codes in which a company owns facilities  # noqa: E501
 
         :param countries_of_operation: The countries_of_operation of this CompanyContext.  # noqa: E501
         :type: list[str]

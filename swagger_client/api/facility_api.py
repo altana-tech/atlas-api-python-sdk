@@ -139,7 +139,7 @@ class FacilityApi(object):
         :param async_req bool
         :param str facility_id: An Altana Canonical Identifier (required)
         :param str trade_direction: Filter products based on the direction of the trade
-        :param int page: Page number to return from results
+        :param int page: Page number to return from results (0-99)
         :return: Products
                  If the method is called asynchronously,
                  returns the request thread.
@@ -163,7 +163,7 @@ class FacilityApi(object):
         :param async_req bool
         :param str facility_id: An Altana Canonical Identifier (required)
         :param str trade_direction: Filter products based on the direction of the trade
-        :param int page: Page number to return from results
+        :param int page: Page number to return from results (0-99)
         :return: Products
                  If the method is called asynchronously,
                  returns the request thread.
@@ -241,7 +241,7 @@ class FacilityApi(object):
 
         :param async_req bool
         :param str facility_id: An Altana Canonical Identifier (required)
-        :param int page: Page number to return from results
+        :param int page: Page number to return from results (0-99)
         :return: FacilityTradingPartners
                  If the method is called asynchronously,
                  returns the request thread.
@@ -264,7 +264,7 @@ class FacilityApi(object):
 
         :param async_req bool
         :param str facility_id: An Altana Canonical Identifier (required)
-        :param int page: Page number to return from results
+        :param int page: Page number to return from results (0-99)
         :return: FacilityTradingPartners
                  If the method is called asynchronously,
                  returns the request thread.
@@ -340,7 +340,7 @@ class FacilityApi(object):
 
         :param async_req bool
         :param str company_name: The company name to search for (required)
-        :param str full_address: The full address to search for (required)
+        :param str full_address: The full address or valid GeoJson Polygon to search for (required)
         :return: Facility
                  If the method is called asynchronously,
                  returns the request thread.
@@ -363,7 +363,7 @@ class FacilityApi(object):
 
         :param async_req bool
         :param str company_name: The company name to search for (required)
-        :param str full_address: The full address to search for (required)
+        :param str full_address: The full address or valid GeoJson Polygon to search for (required)
         :return: Facility
                  If the method is called asynchronously,
                  returns the request thread.
@@ -432,43 +432,43 @@ class FacilityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_facility(self, full_address, **kwargs):  # noqa: E501
+    def search_facility(self, full_address, company_name, **kwargs):  # noqa: E501
         """Facility Search  # noqa: E501
 
         Facility Search.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_facility(full_address, async_req=True)
+        >>> thread = api.search_facility(full_address, company_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str full_address: The full address to search for (required)
-        :param str company_name: The company name to search for
-        :param int page: The Page number to return from results. Starting with 0.
+        :param str full_address: The full address or valid GeoJson Polygon to search for (required)
+        :param str company_name: The company name to search for (required)
+        :param int page: The Page number to return from results (0-99)
         :return: Facilities
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_facility_with_http_info(full_address, **kwargs)  # noqa: E501
+            return self.search_facility_with_http_info(full_address, company_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_facility_with_http_info(full_address, **kwargs)  # noqa: E501
+            (data) = self.search_facility_with_http_info(full_address, company_name, **kwargs)  # noqa: E501
             return data
 
-    def search_facility_with_http_info(self, full_address, **kwargs):  # noqa: E501
+    def search_facility_with_http_info(self, full_address, company_name, **kwargs):  # noqa: E501
         """Facility Search  # noqa: E501
 
         Facility Search.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_facility_with_http_info(full_address, async_req=True)
+        >>> thread = api.search_facility_with_http_info(full_address, company_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str full_address: The full address to search for (required)
-        :param str company_name: The company name to search for
-        :param int page: The Page number to return from results. Starting with 0.
+        :param str full_address: The full address or valid GeoJson Polygon to search for (required)
+        :param str company_name: The company name to search for (required)
+        :param int page: The Page number to return from results (0-99)
         :return: Facilities
                  If the method is called asynchronously,
                  returns the request thread.
@@ -493,6 +493,10 @@ class FacilityApi(object):
         if ('full_address' not in params or
                 params['full_address'] is None):
             raise ValueError("Missing the required parameter `full_address` when calling `search_facility`")  # noqa: E501
+        # verify the required parameter 'company_name' is set
+        if ('company_name' not in params or
+                params['company_name'] is None):
+            raise ValueError("Missing the required parameter `company_name` when calling `search_facility`")  # noqa: E501
 
         collection_formats = {}
 

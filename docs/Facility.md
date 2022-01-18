@@ -19,6 +19,12 @@ Name | Type | Description | Notes
 **data_sources** | **list[str]** |  | [optional] 
 **products_sent** | **list[str]** | A list of product IDs that a facility sends | [optional] 
 **products_received** | **list[str]** | A list of product IDs that a facility receives | [optional] 
+**company_model_metadata** | [**list[ModelMetaData]**](ModelMetaData.md) |  | [optional] 
+**geo_string_address_model_metadata** | [**list[ModelMetaData]**](ModelMetaData.md) |  | [optional] 
+**string_address_model_metadata** | [**list[ModelMetaData]**](ModelMetaData.md) |  | [optional] 
+**geocoder_metadata** | [**list[GeoCoderMetaData]**](GeoCoderMetaData.md) |  | [optional] 
+**address_model_output_level** | **str** |  | [optional] 
+**address_cosine_similarity** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

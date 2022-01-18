@@ -152,7 +152,7 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = swagger_client.CompanyApi(swagger_client.ApiClient(configuration))
 company_id = 'company_id_example' # str | An Altana Canonical Identifier
-page = 56 # int | Page number to return from results (optional)
+page = 56 # int | Page number to return from results (0-99) (optional)
 
 try:
     # Facilities
@@ -167,7 +167,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **str**| An Altana Canonical Identifier | 
- **page** | **int**| Page number to return from results | [optional] 
+ **page** | **int**| Page number to return from results (0-99) | [optional] 
 
 ### Return type
 
@@ -209,7 +209,7 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 api_instance = swagger_client.CompanyApi(swagger_client.ApiClient(configuration))
 company_id = 'company_id_example' # str | An Altana Canonical Identifier
 trade_direction = 'trade_direction_example' # str | Filter products based on the direction of the trade (optional)
-page = 56 # int | Page number to return from results (optional)
+page = 56 # int | Page number to return from results (0-99) (optional)
 
 try:
     # Company Products
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **str**| An Altana Canonical Identifier | 
  **trade_direction** | **str**| Filter products based on the direction of the trade | [optional] 
- **page** | **int**| Page number to return from results | [optional] 
+ **page** | **int**| Page number to return from results (0-99) | [optional] 
 
 ### Return type
 
@@ -266,7 +266,7 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = swagger_client.CompanyApi(swagger_client.ApiClient(configuration))
 company_id = 'company_id_example' # str | An Altana Canonical Identifier
-page = 56 # int | Page number to return from results (optional)
+page = 56 # int | Page number to return from results (0-99) (optional)
 
 try:
     # Trading Partners
@@ -281,7 +281,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **str**| An Altana Canonical Identifier | 
- **page** | **int**| Page number to return from results | [optional] 
+ **page** | **int**| Page number to return from results (0-99) | [optional] 
 
 ### Return type
 
@@ -387,7 +387,7 @@ query = 'query_example' # str | A company name, variant, identifier, or query te
 country = ['country_example'] # list[str] | A list of ISO-2 country codes to filter by (optional)
 hs2 = ['hs2_example'] # list[str] | A list of HS2 product categories to filter by (optional)
 has_restrictions = true # bool | Filter for companies that have restrictions (optional)
-page = 56 # int | Page number to return from results (optional)
+page = 56 # int | Page number to return from results (0-99) (optional)
 
 try:
     # Company Search
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
  **country** | [**list[str]**](str.md)| A list of ISO-2 country codes to filter by | [optional] 
  **hs2** | [**list[str]**](str.md)| A list of HS2 product categories to filter by | [optional] 
  **has_restrictions** | **bool**| Filter for companies that have restrictions | [optional] 
- **page** | **int**| Page number to return from results | [optional] 
+ **page** | **int**| Page number to return from results (0-99) | [optional] 
 
 ### Return type
 

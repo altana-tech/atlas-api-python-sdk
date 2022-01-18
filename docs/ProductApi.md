@@ -87,7 +87,7 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
 product_id = 'product_id_example' # str | An Altana Canonical Identifier
 trade_direction = 'trade_direction_example' # str | Filter companies based on the direction of the trade (optional)
-page = 56 # int | Page number to return from results (optional)
+page = 56 # int | Page number to return from results (0-99) (optional)
 
 try:
     # Product Companies
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **str**| An Altana Canonical Identifier | 
  **trade_direction** | **str**| Filter companies based on the direction of the trade | [optional] 
- **page** | **int**| Page number to return from results | [optional] 
+ **page** | **int**| Page number to return from results (0-99) | [optional] 
 
 ### Return type
 
@@ -145,7 +145,7 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
 product_id = 'product_id_example' # str | An Altana Canonical Identifier
 trade_direction = 'trade_direction_example' # str | Filter facilities based on the direction of the trade (optional)
-page = 56 # int | Page number to return from results (optional)
+page = 56 # int | Page number to return from results (0-99) (optional)
 
 try:
     # Product Facilities
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **str**| An Altana Canonical Identifier | 
  **trade_direction** | **str**| Filter facilities based on the direction of the trade | [optional] 
- **page** | **int**| Page number to return from results | [optional] 
+ **page** | **int**| Page number to return from results (0-99) | [optional] 
 
 ### Return type
 

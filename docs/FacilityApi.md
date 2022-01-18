@@ -89,7 +89,7 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 api_instance = swagger_client.FacilityApi(swagger_client.ApiClient(configuration))
 facility_id = 'facility_id_example' # str | An Altana Canonical Identifier
 trade_direction = 'trade_direction_example' # str | Filter products based on the direction of the trade (optional)
-page = 56 # int | Page number to return from results (optional)
+page = 56 # int | Page number to return from results (0-99) (optional)
 
 try:
     # Facility Products
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **facility_id** | **str**| An Altana Canonical Identifier | 
  **trade_direction** | **str**| Filter products based on the direction of the trade | [optional] 
- **page** | **int**| Page number to return from results | [optional] 
+ **page** | **int**| Page number to return from results (0-99) | [optional] 
 
 ### Return type
 
@@ -146,7 +146,7 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = swagger_client.FacilityApi(swagger_client.ApiClient(configuration))
 facility_id = 'facility_id_example' # str | An Altana Canonical Identifier
-page = 56 # int | Page number to return from results (optional)
+page = 56 # int | Page number to return from results (0-99) (optional)
 
 try:
     # Facility Trading Partners
@@ -161,7 +161,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **facility_id** | **str**| An Altana Canonical Identifier | 
- **page** | **int**| Page number to return from results | [optional] 
+ **page** | **int**| Page number to return from results (0-99) | [optional] 
 
 ### Return type
 
@@ -202,7 +202,7 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = swagger_client.FacilityApi(swagger_client.ApiClient(configuration))
 company_name = 'company_name_example' # str | The company name to search for
-full_address = 'full_address_example' # str | The full address to search for
+full_address = 'full_address_example' # str | The full address or valid GeoJson Polygon to search for
 
 try:
     # Facility Match
@@ -217,7 +217,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_name** | **str**| The company name to search for | 
- **full_address** | **str**| The full address to search for | 
+ **full_address** | **str**| The full address or valid GeoJson Polygon to search for | 
 
 ### Return type
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_facility**
-> Facilities search_facility(full_address, company_name=company_name, page=page)
+> Facilities search_facility(full_address, company_name, page=page)
 
 Facility Search
 
@@ -257,13 +257,13 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.FacilityApi(swagger_client.ApiClient(configuration))
-full_address = 'full_address_example' # str | The full address to search for
-company_name = 'company_name_example' # str | The company name to search for (optional)
-page = 56 # int | The Page number to return from results. Starting with 0. (optional)
+full_address = 'full_address_example' # str | The full address or valid GeoJson Polygon to search for
+company_name = 'company_name_example' # str | The company name to search for
+page = 56 # int | The Page number to return from results (0-99) (optional)
 
 try:
     # Facility Search
-    api_response = api_instance.search_facility(full_address, company_name=company_name, page=page)
+    api_response = api_instance.search_facility(full_address, company_name, page=page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FacilityApi->search_facility: %s\n" % e)
@@ -273,9 +273,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **full_address** | **str**| The full address to search for | 
- **company_name** | **str**| The company name to search for | [optional] 
- **page** | **int**| The Page number to return from results. Starting with 0. | [optional] 
+ **full_address** | **str**| The full address or valid GeoJson Polygon to search for | 
+ **company_name** | **str**| The company name to search for | 
+ **page** | **int**| The Page number to return from results (0-99) | [optional] 
 
 ### Return type
 
